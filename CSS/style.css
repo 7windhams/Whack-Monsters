@@ -1,0 +1,266 @@
+/* --------------------------------------
+   Base Styling
+----------------------------------------- */
+body,
+/* Game Layout */
+html, body {
+  font-family: 'Arial', sans-serif;
+  transition: background 0.5s ease;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f1c40f, #f39c12); /* Default yellow */
+}
+
+/* --------------------------------------
+   Level Backgrounds - MAXIMUM Priority
+----------------------------------------- */
+body.level-1-bg, 
+html body.level-1-bg { background: linear-gradient(135deg, #f1c40f, #f39c12) !important; }
+
+body.level-2-bg, 
+html body.level-2-bg { background: linear-gradient(135deg, #1abc9c, #16a085) !important; }
+
+body.level-3-bg, 
+html body.level-3-bg { background: linear-gradient(135deg, #f39c12, #d35400) !important; }
+
+body.level-4-bg, 
+html body.level-4-bg { background: linear-gradient(135deg, #8e44ad, #9b59b6) !important; }
+
+body.level-5-bg, 
+html body.level-5-bg { background: linear-gradient(135deg, #2ecc71, #27ae60) !important; }
+
+body.level-6-bg, 
+html body.level-6-bg { background: linear-gradient(135deg, #c0392b, #e74c3c) !important; }
+
+body.level-7-bg, 
+html body.level-7-bg { background: linear-gradient(135deg, #2980b9, #34495e) !important; }
+
+body.level-8-bg, 
+html body.level-8-bg { background: linear-gradient(135deg, #e67e22, #e74c3c) !important; }
+
+body.level-9-bg, 
+html body.level-9-bg { background: linear-gradient(135deg, #650c88, #8e44ad) !important; }
+
+body.level-10-bg, 
+html body.level-10-bg { background: linear-gradient(135deg, #290a96, #f39c12) !important; }
+
+/* Default background for non-game state */
+body:not(.game-started) {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+}
+
+/* Overall page centering */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+/* Center title */
+#title-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#title-bar h1 {
+  font-size: 3em;
+  color: #d62828;
+  text-shadow: 2px 2px #fff;
+  margin: 0;
+}
+
+/* --------------------------------------
+   Buttons and Info
+----------------------------------------- */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.btn {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.game-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Center all main game elements */
+#title-bar,
+.button-row,
+.game-info,
+.game-container,
+.game-over {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------
+   Game Board and Holes
+----------------------------------------- */
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px auto;
+  width: 100%;
+}#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 15px;
+  padding: 20px;
+  margin: 0 auto; /* Centers the board horizontally */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  justify-content: center; /* Ensure grid is centered */
+}
+
+.hole {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(145deg, #e0e0e0, #c4c4c4);
+  border-radius: 50%;
+  border: 4px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.hole:hover {
+  border-color: #666;
+  box-shadow: inset 0 6px 12px rgba(0,0,0,0.4);
+}
+
+/* --------------------------------------
+   Monster Style
+----------------------------------------- */
+.monster {
+  font-size: 50px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.monster:active {
+  transform: scale(0.9);
+}
+
+/* --------------------------------------
+   Game Over Panel
+----------------------------------------- */
+.game-over {
+  text-align: center;
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* --------------------------------------
+   WHACK Images Rounded
+----------------------------------------- */
+.whack-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  clip-path: circle(50%);
+  margin: 0 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.whack-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+}
+
+/* --------------------------------------
+   Level Backgrounds
+----------------------------------------- */
+.level-1-bg  { background: linear-gradient(135deg, #f1c40f, #f39c12); }
+.level-2-bg  { background: linear-gradient(135deg, #1abc9c, #16a085); }
+.level-3-bg  { background: linear-gradient(135deg, #f39c12, #d35400); }
+.level-4-bg  { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+.level-5-bg  { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.level-6-bg  { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+.level-7-bg  { background: linear-gradient(135deg, #2980b9, #34495e); }
+.level-8-bg  { background: linear-gradient(135deg, #e67e22, #e74c3c); }
+.level-9-bg  { background: linear-gradient(135deg, #650c88, #8e44ad); }
+.level-10-bg { background: linear-gradient(135deg, #290a96, #f39c12); }
+
+/* --------------------------------------
+   Button Color Themes
+----------------------------------------- */
+.level-1-btn  { background-color: #f1c40f !important; border-color: #d4ac0d; }
+.level-2-btn  { background-color: #16a085 !important; border-color: #138d75; }
+.level-3-btn  { background-color: #d35400 !important; border-color: #ba4a00; }
+.level-4-btn  { background-color: #9b59b6 !important; border-color: #884ea0; }
+.level-5-btn  { background-color: #27ae60 !important; border-color: #229954; }
+.level-6-btn  { background-color: #e74c3c !important; border-color: #cb4335; }
+.level-7-btn  { background-color: #34495e !important; border-color: #2c3e50; }
+.level-8-btn  { background-color: #e67e22 !important; border-color: #ca6f1e; }
+.level-9-btn  { background-color: #8e44ad !important; border-color: #7d3c98; }
+.level-10-btn { background-color: #f39c12 !important; border-color: #d68910; }
+
+/* --------------------------------------
+   Responsive
+----------------------------------------- */
+@media (max-width: 768px) {
+  .whack-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+  }
+
+  #gameBoard {
+    grid-template-columns: repeat(3, 80px);
+    grid-gap: 10px;
+    padding: 15px;
+  }
+
+  .hole {
+    width: 80px;
+    height: 80px;
+  }
+
+  .monster {
+    font-size: 40px;
+  }
+}
+
+/* ULTIMATE LEVEL BACKGROUND OVERRIDE */
+body.level-1-bg, body.level-1-bg * { background: linear-gradient(135deg, #f1c40f, #f39c12) !important; }
+body.level-2-bg, body.level-2-bg * { background: linear-gradient(135deg, #1abc9c, #16a085) !important; }
+body.level-3-bg, body.level-3-bg * { background: linear-gradient(135deg, #f39c12, #d35400) !important; }
+body.level-4-bg, body.level-4-bg * { background: linear-gradient(135deg, #8e44ad, #9b59b6) !important; }
+body.level-5-bg, body.level-5-bg * { background: linear-gradient(135deg, #2ecc71, #27ae60) !important; }
+body.level-6-bg, body.level-6-bg * { background: linear-gradient(135deg, #c0392b, #e74c3c) !important; }
+body.level-7-bg, body.level-7-bg * { background: linear-gradient(135deg, #2980b9, #34495e) !important; }
+body.level-8-bg, body.level-8-bg * { background: linear-gradient(135deg, #e67e22, #e74c3c) !important; }
+body.level-9-bg, body.level-9-bg * { background: linear-gradient(135deg, #650c88, #8e44ad) !important; }
+body.level-10-bg, body.level-10-bg * { background: linear-gradient(135deg, #290a96, #f39c12) !important; }

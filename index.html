@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whack-a-Monster Game</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+</head>
+<body class="level 1 bg">
+
+  <!-- ✅ Centered Game Title -->
+  <div id="title-bar">
+    <h1>🎯 Whack-a-Monster 🎯</h1>
+  </div>
+
+  <!-- ✅ Start & Reset Buttons -->
+  <div class="button-row">
+    <button id="startButton" class="btn btn-danger">Start Game</button>
+    <button id="resetButton" class="btn btn-primary">Reset Game</button>
+  </div>
+
+  <!-- ✅ Game Info Panel -->
+  <div class="game-info">
+    <div>Score: <span id="score">0</span></div>
+    <div>Level: <span id="level">1</span></div>
+    <div>Speed: <span id="speedDisplay">1000ms</span></div>
+    <div>Hits Needed: <span id="hitsNeeded">10</span></div>
+  </div>
+
+  <!-- ✅ Game Layout -->
+  <div class="game-container">
+    <img src="JS/whack.png" alt="Whack Left" class="whack-img left" />
+    <div id="gameBoard"></div>
+    <img src="JS/whack.png" alt="Whack Right" class="whack-img right" />
+  </div>
+
+  <!-- ✅ Game Over Message -->
+  <div id="gameOver" class="game-over" style="display: none;">
+    <h2>🎉 Congratulations! 🎉</h2>
+    <p>You've completed all 10 levels!</p>
+    <p>Final Score: <span id="finalScore">0</span></p>
+    <button id="playAgainButton" class="btn btn-success">Play Again</button>
+  </div>
+
+  <!-- ✅ JavaScript Logic -->
+  <script src="JS/app.js"></script>
+</body>
+</html>
