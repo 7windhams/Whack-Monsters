@@ -51,6 +51,16 @@ function showMonster() {
   monster.style.fontSize = '50px';
   monster.style.cursor = 'pointer';
 
+  monster.style.borderRadius = '50%';
+  monster.style.backgroundColor = '#ff6b6b';
+  monster.style.border = '3px solid #fff';
+  monster.style.boxShadow = '0 2px 4px rgba(0,0,0,0.3)';
+  monster.style.display = 'flex';
+  monster.style.alignItems = 'center';
+  monster.style.justifyContent = 'center';
+  monster.style.objectFit = 'cover';
+  monster.style.overflow = 'hidden';
+
   monster.addEventListener('click', () => {
     if (!isGameRunning) return;
 
